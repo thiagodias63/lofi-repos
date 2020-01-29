@@ -1,0 +1,178 @@
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #5d5d5a;
+  z-index: 0;
+  height: 100vh; }
+
+img {
+  position: absolute;
+  width: 468px;
+  right: 0;
+  top: 95px; }
+
+.lateral-playlist {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15rem;
+  border: 1px solid red;
+  border-top: 0;
+  border-left: 0;
+  border-bottom: 0;
+  background-color: #2b2b26;
+  min-height: 100vw;
+  display: flex;
+  flex-direction: column;
+  z-index: -1; }
+
+.lateral-playlist .music {
+  width: 100%;
+  height: 10vh;
+  border-bottom: 1px solid #9c9c9a; }
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+  padding-bottom: 15px; }
+  main .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 5%;
+    background-color: #4e4e49; }
+    main .header .brand {
+      margin: 15px;
+      padding-left: 16px;
+      color: #ffa45c;
+      background-image: url("https://i.pinimg.com/originals/4c/e6/d9/4ce6d9fd9555b825b4ad366b8a8c2a88.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      font-size: 1.2rem; }
+    main .header .slogan {
+      font-size: 1rem;
+      color: #C5CFD6;
+      font-weight: bold;
+      font-family: 'VCR OSD Mono', 'Courier New', Courier, monospace; }
+    main .header .options {
+      margin-right: 1.7rem;
+      background: none;
+      color: #ffa45c;
+      border: none;
+      padding: 0;
+      font-size: 1.1rem;
+      cursor: pointer; }
+  main .container {
+    display: flex;
+    width: 100vw;
+    height: 85%;
+    z-index: 1; }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  background-color: #4e4e49; }
+  .footer button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .95rem;
+    padding: 1rem;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: #9c9c9a;
+    color: white;
+    border: unset;
+    outline: none;
+    cursor: pointer;
+    transition: background-color .45s ease;
+    border: 1px solid #9c9c9a; }
+    .footer button:hover {
+      border-color: white;
+      background-color: #575750; }
+  .footer .btn-action-primary {
+    color: #ffa45c; }
+  .footer .btn-action-secondary {
+    padding: .7rem; }
+
+footer {
+  height: 20px;
+  background-color: #4e4e49;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  left: 0; }
+
+.window-border {
+  border-color: #272626;
+  border-width: 5px;
+  border-style: solid;
+  margin: 48px;
+  padding: 0;
+  width: 35rem;
+  height: 10rem;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  display: flex; }
+  .window-border .window {
+    margin: 0;
+    padding: 0;
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 1px;
+    border-bottom: 0px;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    display: flex; }
+    .window-border .window .window-border-internal {
+      background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS2Cw1j5A9XDJnOWgoy5XRjFYllt7gbdZ3MioUGB1EvDYLrDj0v");
+      background-size: cover;
+      background-repeat: repeat-x;
+      background-position: 0 0;
+      position: relative;
+      margin: 0;
+      padding: 0px 15px;
+      border-color: #272626;
+      border-width: 4px;
+      border-style: solid;
+      border-bottom: 1px;
+      width: 100%;
+      height: 100%;
+      border-top-left-radius: 24px;
+      border-top-right-radius: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 0; }
+      .window-border .window .window-border-internal .middle-mirros {
+        width: 10px;
+        height: 100%;
+        z-index: 1;
+        border: 1px solid #eee;
+        border-top: 0;
+        background-color: #4f4f70;
+        opacity: .8; }
+      .window-border .window .window-border-internal .push-button {
+        width: 5px;
+        height: 15px;
+        background-color: black; }
