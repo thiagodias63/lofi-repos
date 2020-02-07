@@ -1,0 +1,27 @@
+@keyframes roda-roda {
+    0% {
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -webkit-transform: rotate(0deg); /* Safari prior 9.0 */
+        transform: rotate(0deg); /* Standard syntax */
+    }
+    25% {
+        -ms-transform: rotate(90deg); /* IE 9 */
+        -webkit-transform: rotate(90deg); /* Safari prior 9.0 */
+        transform: rotate(90deg); /* Standard syntax */
+    }
+    50% {
+        -ms-transform: rotate(180deg); /* IE 9 */
+        -webkit-transform: rotate(180deg); /* Safari prior 9.0 */
+        transform: rotate(180deg); /* Standard syntax */
+    }
+    75% {
+        -ms-transform: rotate(270deg); /* IE 9 */
+        -webkit-transform: rotate(270deg); /* Safari prior 9.0 */
+        transform: rotate(270deg); /* Standard syntax */
+    }
+    100% {
+        -ms-transform: rotate(360deg); 
+        -webkit-transform: rotate(360deg); 
+        transform: rotate(360deg); 
+    }
+}

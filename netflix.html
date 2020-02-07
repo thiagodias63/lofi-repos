@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .uppercase {
+            text-transform: uppercase;
+        }
+        body {
+            /* background: #8E0E00;  /* fallback for old browsers */
+            /* background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);  /* Chrome 10-25, Safari 5.1-6 */
+            /* background: linear-gradient(to right, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background-color: black;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            border: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        nav {
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            position: fixed;
+            top: 0;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #0D0D0D;
+            border-image-slice: 1;
+            border-right-width: 1px;
+            border-right-style: solid;
+            border-color: #2A2A2A;
+            /* border-image: linear-gradient(to bottom right, #0D0D0D, #2A2A2A); */
+        }
+        nav ol {
+            padding: 0;
+            border: 0;
+            margin: 0;
+            /* display: flex; */
+            
+        }
+        nav ol li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 0;
+            margin: 0;
+            margin: 25px 0;
+            /* margin-top: 10px; */
+           
+            list-style: none;
+            border: 0;
+        }
+        nav ol li.active {
+            border-left: 2px solid red;
+        }
+        nav ol li.active a{
+            color: white;
+            transform: scale(1.1);
+        }
+        nav ol li:hover a{
+            transform: scale(1.05);
+            color: white;
+        }
+        nav ol li a:first {
+            padding-top: 0;
+            padding-bottom: 10px;
+            padding-left: 22px; 
+            padding-right: 22px;
+            font-size: .9rem;
+            color: #ccc;
+        }
+        nav ol li a {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 22px; 
+            padding-right: 22px;
+            font-size: .9rem;
+            color: #ccc;
+        }
+
+        main {
+            /* margin-left: 150px; */
+            color: white;
+            background: linear-gradient(to right, black 25%, transparent), linear-gradient(to top, black 25%, transparent) ,url("https://observatoriodocinema.bol.uol.com.br/wp-content/uploads/2019/07/main-netflix-stranger-things-3-max-sadie-sink-eleven-millie-bobby-brown-yellow-scrunchie.jpg") right top no-repeat;
+        }
+        main .main-title {
+            /* width: 100%; */
+            /* height: 40vh; */
+            padding-top: 7vw;
+            margin-left: 150px;            
+            
+        }
+        main .main-title h1,
+        main .main-title h2 {
+            line-height: 0;
+        }
+        main .main-title h1 {
+            font-size: 4rem;
+        }
+        main .main-title h2 {
+            font-weight: normal;
+        }
+        main .relevance {
+            color: rgb(76, 183, 105);
+            font-weight: bold;
+        }
+        main .main-title p {
+            color: #ccc;
+        }
+        main .main-title p span:nth-child(1) {
+            margin-left: 0;
+        }
+        main .main-title p span {
+            margin: 0 10px;
+        }
+        main .classification {
+            padding: 1px 6px;
+            background-color: rgb(68, 64, 63);
+            color: white;
+            font-size: .9rem;
+        }
+        main .quality {
+            padding: 1px 6px;
+            border: 1px solid white;
+            /* background-color: rgb(68, 64, 63); */
+            color: white;
+            font-size: .9rem;
+        }
+        main .resume {
+            width: 40%;
+        }
+        main .catalog {
+            margin-top: 150px;
+        }
+        main .catalog .category {
+            margin-left: 150px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+        main .catalog ol {
+            padding: 0;
+            border: 0;
+            margin: 0;
+            margin-left: 70px;
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            /* overflow-x: hidden;
+            overflow-y: auto; */
+        }
+        main .catalog ol::-webkit-scrollbar {
+            display: none;
+        }
+        main .catalog ol li {
+            padding: 0;
+            border: 0;
+            margin: 0;
+            /* border: 1px solid #0D0D0D; */
+            margin-left: 25px;
+        }
+        main .catalog ol li:hover {
+            /* margin-right: -25px; */
+        }
+        main .catalog ol li img {
+            height: 150px;
+            width: 235px;
+            transition: all .35s ease-in;
+        }
+        main .catalog ol li img:hover {
+            /* transform: scale(1.1); */
+            top: -5; 
+            height: 170px;
+            width: 255px;
+            transition: all .25s ease-in;
+        }
+    </style>
+    <nav>
+        <ol>
+            <li>
+                <a href="#"> <i class="fas fa-search"></i> </a>
+            </li>
+            <li class="active">
+                <a href="#"> <i class="fas fa-home"></i> </a>
+            </li>
+            <li>
+                <a href="#"> <i class="fas fa-tv"></i> </a>
+            </li>
+            <li>
+                <a href="#"> <i class="fas fa-film"></i> </a>
+            </li>
+            <li>
+                <a href="#"> <i class="fas fa-plus"></i> </a>
+            </li>
+            <li>
+                <a href="#"> <i class="fas fa-newspaper"></i> </a>
+            </li>
+        </ol>
+    </nav>
+    <main>
+        <div class="main-title">
+            <h2>Original <span class="bold uppercase">NetFlix </span></h2>
+            <h1 class="uppercase">Stranger Things</h1>
+            <p>
+                <span class="relevance">95% relevante</span> 2017 <span class="classification">16</span> 2 Temporadas <span class="quality">HD</span>
+            </p>
+            <div class="resume">
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, eius perferendis animi fuga beatae dolore pariatur esse est, placeat ducimus recusandae culpa error quam, quidem amet molestias quod! Quae, eligendi.
+                </p>
+            </div>
+        </div>
+
+        <div class="catalog">
+            <div id="my-list">
+                <h3 class="category">Minha Lista</h3>
+                <ol>
+                    <li>
+                        <a href="#">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRmYY7sURxXvC1o7-yUg1fGaTkH8A7Dl-U8sbTqTqXg84yPOzSd" alt="El Libertador" title="El Libertador">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRmYY7sURxXvC1o7-yUg1fGaTkH8A7Dl-U8sbTqTqXg84yPOzSd" alt="El Libertador" title="El Libertador">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRmYY7sURxXvC1o7-yUg1fGaTkH8A7Dl-U8sbTqTqXg84yPOzSd" alt="El Libertador" title="El Libertador">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRmYY7sURxXvC1o7-yUg1fGaTkH8A7Dl-U8sbTqTqXg84yPOzSd" alt="El Libertador" title="El Libertador">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRmYY7sURxXvC1o7-yUg1fGaTkH8A7Dl-U8sbTqTqXg84yPOzSd" alt="El Libertador" title="El Libertador">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRmYY7sURxXvC1o7-yUg1fGaTkH8A7Dl-U8sbTqTqXg84yPOzSd" alt="El Libertador" title="El Libertador">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRmYY7sURxXvC1o7-yUg1fGaTkH8A7Dl-U8sbTqTqXg84yPOzSd" alt="El Libertador" title="El Libertador">
+                        </a>
+                    </li>
+                </ol>
+            </div>
+            <div id="remonded">
+                <h3 class="category">Recomendações</h3>
+                <ol>
+                    <li>
+                        <a href="">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTR_r9G5ATAhQ6ocSCH5nDQnmBGtWoJ194CyH5zcieNypHr45aC" alt="Ghost in the Shell" title="Ghost in the Shell">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTR_r9G5ATAhQ6ocSCH5nDQnmBGtWoJ194CyH5zcieNypHr45aC" alt="Ghost in the Shell" title="Ghost in the Shell">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTR_r9G5ATAhQ6ocSCH5nDQnmBGtWoJ194CyH5zcieNypHr45aC" alt="Ghost in the Shell" title="Ghost in the Shell">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTR_r9G5ATAhQ6ocSCH5nDQnmBGtWoJ194CyH5zcieNypHr45aC" alt="Ghost in the Shell" title="Ghost in the Shell">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTR_r9G5ATAhQ6ocSCH5nDQnmBGtWoJ194CyH5zcieNypHr45aC" alt="Ghost in the Shell" title="Ghost in the Shell">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTR_r9G5ATAhQ6ocSCH5nDQnmBGtWoJ194CyH5zcieNypHr45aC" alt="Ghost in the Shell" title="Ghost in the Shell">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTR_r9G5ATAhQ6ocSCH5nDQnmBGtWoJ194CyH5zcieNypHr45aC" alt="Ghost in the Shell" title="Ghost in the Shell">
+                        </a>
+                    </li>
+                </ol>
+            </div>
+            <div id="gener-terror">
+                <h3 class="category">Gênero: Terror</h3>
+                <ol>
+                    <li>
+                        <a href="">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTOF0BMLOZjEmZjj3k_MZ78LfENghGASvQ3ATS3ymAib5vxw9w6" alt="A freira" title="A freira">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTOF0BMLOZjEmZjj3k_MZ78LfENghGASvQ3ATS3ymAib5vxw9w6" alt="A freira" title="A freira">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTOF0BMLOZjEmZjj3k_MZ78LfENghGASvQ3ATS3ymAib5vxw9w6" alt="A freira" title="A freira">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTOF0BMLOZjEmZjj3k_MZ78LfENghGASvQ3ATS3ymAib5vxw9w6" alt="A freira" title="A freira">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTOF0BMLOZjEmZjj3k_MZ78LfENghGASvQ3ATS3ymAib5vxw9w6" alt="A freira" title="A freira">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTOF0BMLOZjEmZjj3k_MZ78LfENghGASvQ3ATS3ymAib5vxw9w6" alt="A freira" title="A freira">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTOF0BMLOZjEmZjj3k_MZ78LfENghGASvQ3ATS3ymAib5vxw9w6" alt="A freira" title="A freira">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTOF0BMLOZjEmZjj3k_MZ78LfENghGASvQ3ATS3ymAib5vxw9w6" alt="A freira" title="A freira">
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+</body>
+</html>
